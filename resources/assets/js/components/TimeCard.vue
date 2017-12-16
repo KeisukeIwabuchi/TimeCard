@@ -1,7 +1,7 @@
 <template lang="pug">
   .wrapper
     .main
-      .group-name アベンジャーズ
+      .group-name {{ team }}
       .border
       .date {{ date }}
       .time {{ time }}
@@ -22,6 +22,7 @@
 
 <script>
   export default {
+    props: ['team'],
     data () {
       return {
         selectedMember: '',

@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="app">
-            <example-component></example-component>
+            <time-card team="{{ $team }}"></time-card>
         </div>
         <script src="js/app.js"></script>
     </body>

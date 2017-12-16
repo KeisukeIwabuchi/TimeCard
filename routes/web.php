@@ -13,6 +13,8 @@
 
 Route::get('user', 'UserController@index');
 
+Route::get('time', 'WorkingTimeController@index');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['team' => env('TEAM_NAME')]);
 });
