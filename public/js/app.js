@@ -987,7 +987,7 @@ window.Vue = __webpack_require__(35);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('time-card', __webpack_require__(58));
+Vue.component('time-card', __webpack_require__(38));
 
 var app = new Vue({
   el: '#app'
@@ -42733,9 +42733,97 @@ exports.clearImmediate = clearImmediate;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(4)))
 
 /***/ }),
-/* 38 */,
-/* 39 */,
-/* 40 */,
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(39)
+}
+var normalizeComponent = __webpack_require__(44)
+/* script */
+var __vue_script__ = __webpack_require__(45)
+/* template */
+var __vue_template__ = __webpack_require__(46)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-051af398"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/TimeCard.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-051af398", Component.options)
+  } else {
+    hotAPI.reload("data-v-051af398", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(40);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(42)("92908252", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-051af398\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TimeCard.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-051af398\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TimeCard.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(41)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.wrapper[data-v-051af398] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  background-color: #85d417;\n  color: #fff;\n}\n.main[data-v-051af398] {\n  width: calc(100% - 500px);\n  height: 100%;\n  padding: 50px 0 0;\n}\n.sidebar[data-v-051af398] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 1;\n  width: 500px;\n  height: 100%;\n  padding: 50px 0 0;\n  -webkit-box-shadow: 0px 0px 8px 2px #666;\n          box-shadow: 0px 0px 8px 2px #666;\n  background-color: #fff;\n  color: #333;\n}\n.sidebar__title[data-v-051af398] {\n  margin: 0 0 2px;\n  padding: 10px 0;\n  background-color: #85d417;\n  color: #fff;\n  text-align: center;\n}\n.sidebar__item[data-v-051af398] {\n  padding: 15px 20px;\n  border-bottom: 1px solid #eee;\n}\n.sidebar__item[data-v-051af398]:hover,\n.sidebar__item.select[data-v-051af398] {\n  background-color: #85d417;\n  color: #fff;\n}\n.sidebar__item .working[data-v-051af398] {\n  float: right;\n  background-color: #85d432;\n  padding: 3px 6px;\n  border-radius: 3px;\n  color: #fff;\n}\n.border[data-v-051af398] {\n  width: 90%;\n  height: 2px;\n  margin: 40px auto;\n  background-color: rgba(0,0,0,0.2);\n}\n.group-name[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 32px;\n}\n.date[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 20px;\n}\n.time[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 64px;\n}\n.btn__block[data-v-051af398] {\n  width: 360px;\n  margin: 50px auto 0;\n}\n.name[data-v-051af398] {\n  margin: 0 0 10px;\n  font-size: 30px;\n  text-align: center;\n}\n.btn[data-v-051af398] {\n  width: 120px;\n  height: 120px;\n  margin: 0 60px 0 0;\n  padding: 0;\n  border-radius: 60px;\n  border: 2px solid #fff;\n  font-size: 18px;\n  line-height: 120px;\n  opacity: 0.5;\n}\n.btn[data-v-051af398]:hover {\n  color: #fff;\n  opacity: 0.5;\n}\n.btn.active[data-v-051af398] {\n  -webkit-box-shadow: 0 0 0 0 #000;\n          box-shadow: 0 0 0 0 #000;\n  opacity: 1;\n}\n.btn.active[data-v-051af398]:hover {\n  background-color: #fff;\n  color: #85d417;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 41 */
 /***/ (function(module, exports) {
 
@@ -43181,116 +43269,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 45 */,
-/* 46 */,
-/* 47 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(59)
-}
-var normalizeComponent = __webpack_require__(44)
-/* script */
-var __vue_script__ = __webpack_require__(61)
-/* template */
-var __vue_template__ = __webpack_require__(62)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-051af398"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/TimeCard.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-051af398", Component.options)
-  } else {
-    hotAPI.reload("data-v-051af398", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(60);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(42)("92908252", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-051af398\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TimeCard.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-051af398\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/stylus-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TimeCard.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(41)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wrapper[data-v-051af398] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  background-color: #85d417;\n  color: #fff;\n}\n.main[data-v-051af398] {\n  width: calc(100% - 500px);\n  height: 100%;\n  padding: 50px 0 0;\n}\n.sidebar[data-v-051af398] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 1;\n  width: 500px;\n  height: 100%;\n  padding: 50px 0 0;\n  -webkit-box-shadow: 0px 0px 8px 2px #666;\n          box-shadow: 0px 0px 8px 2px #666;\n  background-color: #fff;\n  color: #333;\n}\n.sidebar__title[data-v-051af398] {\n  margin: 0 0 2px;\n  padding: 10px 0;\n  background-color: #85d417;\n  color: #fff;\n  text-align: center;\n}\n.sidebar__item[data-v-051af398] {\n  padding: 15px 20px;\n  border-bottom: 1px solid #eee;\n}\n.sidebar__item[data-v-051af398]:hover,\n.sidebar__item.select[data-v-051af398] {\n  background-color: #85d417;\n  color: #fff;\n}\n.border[data-v-051af398] {\n  width: 90%;\n  height: 2px;\n  margin: 40px auto;\n  background-color: rgba(0,0,0,0.2);\n}\n.group-name[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 32px;\n}\n.date[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 20px;\n}\n.time[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 64px;\n}\n.btn__block[data-v-051af398] {\n  width: 360px;\n  margin: 50px auto 0;\n}\n.name[data-v-051af398] {\n  margin: 0 0 10px;\n  font-size: 30px;\n  text-align: center;\n}\n.btn[data-v-051af398] {\n  width: 120px;\n  height: 120px;\n  margin: 0 60px 0 0;\n  padding: 0;\n  border-radius: 60px;\n  border: 2px solid #fff;\n  font-size: 18px;\n  line-height: 120px;\n  opacity: 0.5;\n}\n.btn[data-v-051af398]:hover {\n  color: #fff;\n  opacity: 0.5;\n}\n.btn.active[data-v-051af398] {\n  -webkit-box-shadow: 0 0 0 0 #000;\n          box-shadow: 0 0 0 0 #000;\n  opacity: 1;\n}\n.btn.active[data-v-051af398]:hover {\n  background-color: #fff;\n  color: #85d417;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 61 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43323,6 +43302,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       selectedMember: '',
+      nowDate: '',
+      nowTime: '',
       members: [{
         id: 1,
         name: 'スティーブ・ロジャーズ',
@@ -43348,49 +43329,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   computed: {
-    time: {
-      get: function get() {
-        var time = new Date();
-        var hour = this.zeroPadding(time.getHours());
-        var minutes = this.zeroPadding(time.getMinutes());
-        var seconds = this.zeroPadding(time.getSeconds());
-        return hour + ':' + minutes + ':' + seconds;
-      }
-    },
-    date: {
-      get: function get() {
-        var time = new Date();
-        var year = time.getFullYear();
-        var month = this.zeroPadding(time.getMonth() + 1);
-        var date = this.zeroPadding(time.getDate());
-        var day_of_week = time.getDay();
-        var day = '日';
-        switch (day_of_week) {
-          case 0:
-            day = '日';
-            break;
-          case 1:
-            day = '月';
-            break;
-          case 2:
-            day = '火';
-            break;
-          case 3:
-            day = '水';
-            break;
-          case 4:
-            day = '木';
-            break;
-          case 5:
-            day = '金';
-            break;
-          case 6:
-            day = '土';
-            break;
-        }
-        return year + '年' + month + '月' + date + '日（' + day + '）';
-      }
-    },
     isActiveAndLeave: function isActiveAndLeave() {
       if (this.selectedMember.length === 0) {
         return false;
@@ -43419,6 +43357,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
+    date: function date() {
+      var time = new Date();
+      var year = time.getFullYear();
+      var month = this.zeroPadding(time.getMonth() + 1);
+      var date = this.zeroPadding(time.getDate());
+      var day_of_week = time.getDay();
+      var day = '日';
+      switch (day_of_week) {
+        case 0:
+          day = '日';
+          break;
+        case 1:
+          day = '月';
+          break;
+        case 2:
+          day = '火';
+          break;
+        case 3:
+          day = '水';
+          break;
+        case 4:
+          day = '木';
+          break;
+        case 5:
+          day = '金';
+          break;
+        case 6:
+          day = '土';
+          break;
+      }
+      return year + '年' + month + '月' + date + '日（' + day + '）';
+    },
+    time: function time() {
+      var time = new Date();
+      var hour = this.zeroPadding(time.getHours());
+      var minutes = this.zeroPadding(time.getMinutes());
+      var seconds = this.zeroPadding(time.getSeconds());
+      return hour + ':' + minutes + ':' + seconds;
+    },
     zeroPadding: function zeroPadding(value) {
       if (value < 10) {
         return '0' + value;
@@ -43453,11 +43430,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     isSelect: function isSelect(name) {
       return this.selectedMember === name ? true : false;
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    setInterval(function () {
+      _this.nowDate = _this.date();
+      _this.nowTime = _this.time();
+    }, 100);
   }
 });
 
 /***/ }),
-/* 62 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43468,8 +43453,8 @@ var render = function() {
     _c("div", { staticClass: "main" }, [
       _c("div", { staticClass: "group-name" }, [_vm._v(_vm._s(_vm.team))]),
       _c("div", { staticClass: "border" }),
-      _c("div", { staticClass: "date" }, [_vm._v(_vm._s(_vm.date))]),
-      _c("div", { staticClass: "time" }, [_vm._v(_vm._s(_vm.time))]),
+      _c("div", { staticClass: "date" }, [_vm._v(_vm._s(_vm.nowDate))]),
+      _c("div", { staticClass: "time" }, [_vm._v(_vm._s(_vm.nowTime))]),
       _c("div", { staticClass: "border" }),
       _c("div", { staticClass: "btn__block" }, [
         _c("div", { staticClass: "name" }, [
@@ -43522,7 +43507,9 @@ var render = function() {
             },
             [
               _c("label", [_vm._v(_vm._s(member.name))]),
-              member.isWork ? _c("label", [_vm._v("出勤中")]) : _vm._e()
+              member.isWork
+                ? _c("label", { staticClass: "working" }, [_vm._v("出勤中")])
+                : _vm._e()
             ]
           )
         })
@@ -43540,6 +43527,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-051af398", module.exports)
   }
 }
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -3,8 +3,8 @@
     .main
       .group-name {{ team }}
       .border
-      .date {{ date }}
-      .time {{ time }}
+      .date {{ nowDate }}
+      .time {{ nowTime }}
       .border
       .btn__block
         .name {{ selectedMember }}
@@ -15,9 +15,9 @@
       .sidebar__item(
         v-for="member in members"
         @click="selectMember(member.id)"
-        :class="{select: isSelect(member.name)}") 
+        :class="{select: isSelect(member.name)}")
         label {{ member.name }}
-        label(v-if="member.isWork") 出勤中
+        label.working(v-if="member.isWork") 出勤中
 </template>
 
 <script>
@@ -26,6 +26,8 @@
     data () {
       return {
         selectedMember: '',
+        nowDate: '',
+        nowTime: '',
         members: [
           {
             id: 1,
@@ -51,49 +53,6 @@
       }
     },
     computed: {
-      time: {
-        get: function() {
-          let time = new Date()
-          let hour = this.zeroPadding(time.getHours())
-          let minutes = this.zeroPadding(time.getMinutes())
-          let seconds = this.zeroPadding(time.getSeconds())
-          return hour + ':' + minutes + ':' + seconds
-        }
-      },
-      date: {
-        get: function() {
-          let time = new Date()
-          let year = time.getFullYear()
-          let month = this.zeroPadding(time.getMonth() + 1)
-          let date = this.zeroPadding(time.getDate())
-          let day_of_week = time.getDay()
-          let day = '日'
-          switch (day_of_week) {
-            case 0:
-              day = '日'
-              break
-            case 1:
-              day = '月'
-              break
-            case 2:
-              day = '火'
-              break
-            case 3:
-              day = '水'
-              break
-            case 4:
-              day = '木'
-              break
-            case 5:
-              day = '金'
-              break
-            case 6:
-              day = '土'
-              break
-          }
-          return year + '年' + month + '月' + date + '日（' + day + '）'
-        }
-      },
       isActiveAndLeave: function() {
         if (this.selectedMember.length === 0) {
           return false
@@ -122,6 +81,45 @@
       }
     },
     methods: {
+      date: function() {
+        let time = new Date()
+        let year = time.getFullYear()
+        let month = this.zeroPadding(time.getMonth() + 1)
+        let date = this.zeroPadding(time.getDate())
+        let day_of_week = time.getDay()
+        let day = '日'
+        switch (day_of_week) {
+          case 0:
+            day = '日'
+            break
+          case 1:
+            day = '月'
+            break
+          case 2:
+            day = '火'
+            break
+          case 3:
+            day = '水'
+            break
+          case 4:
+            day = '木'
+            break
+          case 5:
+            day = '金'
+            break
+          case 6:
+            day = '土'
+            break
+        }
+        return year + '年' + month + '月' + date + '日（' + day + '）'
+      },
+      time: function() {
+        let time = new Date()
+        let hour = this.zeroPadding(time.getHours())
+        let minutes = this.zeroPadding(time.getMinutes())
+        let seconds = this.zeroPadding(time.getSeconds())
+        return hour + ':' + minutes + ':' + seconds
+      },
       zeroPadding: function(value) {
         if (value < 10) {
           return '0' + value
@@ -156,6 +154,12 @@
       isSelect: function(name) {
         return (this.selectedMember === name) ? true : false
       }
+    },
+    mounted () {
+      setInterval(()=>{
+        this.nowDate = this.date()
+        this.nowTime = this.time()
+      }, 100)
     }
   }
 </script>
@@ -198,6 +202,13 @@
 
       &:hover, &.select
         background-color #85D417
+        color #fff
+      
+      .working
+        float right
+        background-color #85D432
+        padding 3px 6px
+        border-radius 3px
         color #fff
 
   .border
