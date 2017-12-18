@@ -17,10 +17,11 @@
         @click="selectMember(member.id)"
         :class="{select: isSelect(member.name)}")
         label {{ member.name }}
-        label.working(v-if="member.isWork") 出勤中
+        label.working(v-if="member.is_working") 出勤中
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     props: ['team'],
     data () {
@@ -28,28 +29,7 @@
         selectedMember: '',
         nowDate: '',
         nowTime: '',
-        members: [
-          {
-            id: 1,
-            name: 'スティーブ・ロジャーズ',
-            isWork: false
-          }, {
-            id: 2,
-            name: 'トニー・スターク',
-            isWork: false
-          }, {
-            id: 3,
-            name: 'マイティ・ソー',
-            isWork: false
-          }, {
-            id: 4,
-            name: 'ブルース・バナー',
-            isWork: false
-          }, {
-            id: 5,
-            name: 'ニック・フューリー',
-            isWork: false
-          }]
+        members: []
       }
     },
     computed: {
@@ -59,7 +39,7 @@
         }
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            if (this.members[i].isWork === false) {
+            if (this.members[i].is_working == false) {
               return true
             }
           }
@@ -72,7 +52,7 @@
         }
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            if (this.members[i].isWork === true) {
+            if (this.members[i].is_working == true) {
               return true
             }
           }
@@ -140,20 +120,27 @@
       arrival: function() {
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            this.members[i].isWork = true
+            this.members[i].is_working = true
           }
         }
       },
       leave: function() {
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            this.members[i].isWork = false
+            this.members[i].is_working = false
           }
         }
       },
       isSelect: function(name) {
         return (this.selectedMember === name) ? true : false
       }
+    },
+    created () {
+      axios.get('/user')
+      .then((res) => {
+        console.log(res.data)
+        this.members = res.data
+      });
     },
     mounted () {
       setInterval(()=>{

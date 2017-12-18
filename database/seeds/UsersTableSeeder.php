@@ -13,12 +13,14 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'スティーブ・ジョブズ',
-            'user_type' => '正社員'
+            'user_type' => '正社員',
+            'is_working' => 0
         ]);
 
         DB::table('users')->insert([
             'name' => 'ビル・ゲイツ',
-            'user_type' => 'アルバイト'
+            'user_type' => 'アルバイト',
+            'is_working' => 0
         ]);
     }
 }

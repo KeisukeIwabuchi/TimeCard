@@ -43274,6 +43274,8 @@ module.exports = function normalizeComponent (
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -43297,6 +43299,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['team'],
   data: function data() {
@@ -43304,27 +43307,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       selectedMember: '',
       nowDate: '',
       nowTime: '',
-      members: [{
-        id: 1,
-        name: 'スティーブ・ロジャーズ',
-        isWork: false
-      }, {
-        id: 2,
-        name: 'トニー・スターク',
-        isWork: false
-      }, {
-        id: 3,
-        name: 'マイティ・ソー',
-        isWork: false
-      }, {
-        id: 4,
-        name: 'ブルース・バナー',
-        isWork: false
-      }, {
-        id: 5,
-        name: 'ニック・フューリー',
-        isWork: false
-      }]
+      members: []
     };
   },
 
@@ -43335,7 +43318,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
       for (var i = 0; i < this.members.length; i++) {
         if (this.members[i].name === this.selectedMember) {
-          if (this.members[i].isWork === false) {
+          if (this.members[i].is_working == false) {
             return true;
           }
         }
@@ -43348,7 +43331,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
       for (var i = 0; i < this.members.length; i++) {
         if (this.members[i].name === this.selectedMember) {
-          if (this.members[i].isWork === true) {
+          if (this.members[i].is_working == true) {
             return true;
           }
         }
@@ -43416,14 +43399,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     arrival: function arrival() {
       for (var i = 0; i < this.members.length; i++) {
         if (this.members[i].name === this.selectedMember) {
-          this.members[i].isWork = true;
+          this.members[i].is_working = true;
         }
       }
     },
     leave: function leave() {
       for (var i = 0; i < this.members.length; i++) {
         if (this.members[i].name === this.selectedMember) {
-          this.members[i].isWork = false;
+          this.members[i].is_working = false;
         }
       }
     },
@@ -43431,12 +43414,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.selectedMember === name ? true : false;
     }
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this = this;
 
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/user').then(function (res) {
+      console.log(res.data);
+      _this.members = res.data;
+    });
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
     setInterval(function () {
-      _this.nowDate = _this.date();
-      _this.nowTime = _this.time();
+      _this2.nowDate = _this2.date();
+      _this2.nowTime = _this2.time();
     }, 100);
   }
 });
@@ -43507,7 +43498,7 @@ var render = function() {
             },
             [
               _c("label", [_vm._v(_vm._s(member.name))]),
-              member.isWork
+              member.is_working
                 ? _c("label", { staticClass: "working" }, [_vm._v("出勤中")])
                 : _vm._e()
             ]
