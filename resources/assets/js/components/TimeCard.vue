@@ -120,7 +120,13 @@
       arrival: function() {
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            this.members[i].is_working = true
+            axios.post('/time', {
+              id: (i + 1),
+              start_time: this.getTime()
+            }).then((res) => {
+              console.log(res.data)
+              this.members[i].is_working = true
+            })
           }
         }
       },
@@ -130,6 +136,18 @@
             this.members[i].is_working = false
           }
         }
+      },
+      getTime: function() {
+        let time = new Date();
+        let year = time.getFullYear()
+        let month = this.zeroPadding(time.getMonth() + 1)
+        let date = this.zeroPadding(time.getDate())
+        let hour = this.zeroPadding(time.getHours())
+        let minutes = this.zeroPadding(time.getMinutes())
+        let seconds = this.zeroPadding(time.getSeconds())
+        
+        return year + '/' + month + '/' + date + ' ' +
+               hour + ':' + minutes + ':' + seconds
       },
       isSelect: function(name) {
         return (this.selectedMember === name) ? true : false

@@ -20,7 +20,7 @@ class CreateWorkingTimesTable extends Migration
             $table->integer('month');
             $table->integer('date');
             $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->dateTime('end_time')->nullable();
         });
     }
 

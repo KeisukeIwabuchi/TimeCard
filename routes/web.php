@@ -14,6 +14,8 @@
 Route::get('user', 'UserController@index');
 
 Route::get('time', 'WorkingTimeController@index');
+Route::post('time', 'WorkingTimeController@store');
+Route::put('time/{id}', 'WorkingTimeController@update');
 
 Route::get('/', function () {
     return view('welcome', ['team' => env('TEAM_NAME')]);
