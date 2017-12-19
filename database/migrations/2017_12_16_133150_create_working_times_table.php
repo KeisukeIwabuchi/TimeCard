@@ -16,9 +16,6 @@ class CreateWorkingTimesTable extends Migration
         Schema::create('working_times', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('user_id');
-            $table->integer('year');
-            $table->integer('month');
-            $table->integer('date');
             $table->dateTime('start_time');
             $table->dateTime('end_time')->nullable();
         });

@@ -12,16 +12,17 @@
         .btn(:class="{active: isActiveAndArrival}" @click="leave()") 退勤
     .sidebar
       .sidebar__title スタッフ一覧
-      .sidebar__item(
-        v-for="member in members"
-        @click="selectMember(member.id)"
-        :class="{select: isSelect(member.name)}")
-        label {{ member.name }}
-        label.working(v-if="member.is_working") 出勤中
+      .sidebar__item-block
+        .sidebar__item(
+          v-for="member in members"
+          @click="selectMember(member.id)"
+          :class="{select: isSelect(member.name)}")
+          label {{ member.name }}
+          label.working(v-if="member.is_working") 出勤中
 </template>
 
 <script>
-  import axios from 'axios'
+  // import axios from 'axios'
   export default {
     props: ['team'],
     data () {
@@ -120,12 +121,11 @@
       arrival: function() {
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            axios.post('/time', {
+            window.axios.post('/time', {
               id: (i + 1),
               start_time: this.getTime()
             }).then((res) => {
-              console.log(res.data)
-              this.members[i].is_working = true
+              this.members[res.data - 1].is_working = true
             })
           }
         }
@@ -133,7 +133,11 @@
       leave: function() {
         for (var i = 0; i < this.members.length; i++) {
           if (this.members[i].name === this.selectedMember) {
-            this.members[i].is_working = false
+            window.axios.put('/time/' + (i + 1), {
+              end_time: this.getTime()
+            }).then((res) => {
+              this.members[res.data - 1].is_working = false
+            })
           }
         }
       },
@@ -146,7 +150,7 @@
         let minutes = this.zeroPadding(time.getMinutes())
         let seconds = this.zeroPadding(time.getSeconds())
         
-        return year + '/' + month + '/' + date + ' ' +
+        return year + '-' + month + '-' + date + ' ' +
                hour + ':' + minutes + ':' + seconds
       },
       isSelect: function(name) {
@@ -200,6 +204,9 @@
       background-color #85D417
       color #fff
       text-align center
+
+    &__item-block
+      overflow-y scroll
 
     &__item
       padding 15px 20px

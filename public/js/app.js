@@ -42818,7 +42818,7 @@ exports = module.exports = __webpack_require__(41)(undefined);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-051af398] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  background-color: #85d417;\n  color: #fff;\n}\n.main[data-v-051af398] {\n  width: calc(100% - 500px);\n  height: 100%;\n  padding: 50px 0 0;\n}\n.sidebar[data-v-051af398] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 1;\n  width: 500px;\n  height: 100%;\n  padding: 50px 0 0;\n  -webkit-box-shadow: 0px 0px 8px 2px #666;\n          box-shadow: 0px 0px 8px 2px #666;\n  background-color: #fff;\n  color: #333;\n}\n.sidebar__title[data-v-051af398] {\n  margin: 0 0 2px;\n  padding: 10px 0;\n  background-color: #85d417;\n  color: #fff;\n  text-align: center;\n}\n.sidebar__item[data-v-051af398] {\n  padding: 15px 20px;\n  border-bottom: 1px solid #eee;\n}\n.sidebar__item[data-v-051af398]:hover,\n.sidebar__item.select[data-v-051af398] {\n  background-color: #85d417;\n  color: #fff;\n}\n.sidebar__item .working[data-v-051af398] {\n  float: right;\n  background-color: #85d432;\n  padding: 3px 6px;\n  border-radius: 3px;\n  color: #fff;\n}\n.border[data-v-051af398] {\n  width: 90%;\n  height: 2px;\n  margin: 40px auto;\n  background-color: rgba(0,0,0,0.2);\n}\n.group-name[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 32px;\n}\n.date[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 20px;\n}\n.time[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 64px;\n}\n.btn__block[data-v-051af398] {\n  width: 360px;\n  margin: 50px auto 0;\n}\n.name[data-v-051af398] {\n  margin: 0 0 10px;\n  font-size: 30px;\n  text-align: center;\n}\n.btn[data-v-051af398] {\n  width: 120px;\n  height: 120px;\n  margin: 0 60px 0 0;\n  padding: 0;\n  border-radius: 60px;\n  border: 2px solid #fff;\n  font-size: 18px;\n  line-height: 120px;\n  opacity: 0.5;\n}\n.btn[data-v-051af398]:hover {\n  color: #fff;\n  opacity: 0.5;\n}\n.btn.active[data-v-051af398] {\n  -webkit-box-shadow: 0 0 0 0 #000;\n          box-shadow: 0 0 0 0 #000;\n  opacity: 1;\n}\n.btn.active[data-v-051af398]:hover {\n  background-color: #fff;\n  color: #85d417;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-051af398] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  background-color: #85d417;\n  color: #fff;\n}\n.main[data-v-051af398] {\n  width: calc(100% - 500px);\n  height: 100%;\n  padding: 50px 0 0;\n}\n.sidebar[data-v-051af398] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 1;\n  width: 500px;\n  height: 100%;\n  padding: 50px 0 0;\n  -webkit-box-shadow: 0px 0px 8px 2px #666;\n          box-shadow: 0px 0px 8px 2px #666;\n  background-color: #fff;\n  color: #333;\n}\n.sidebar__title[data-v-051af398] {\n  margin: 0 0 2px;\n  padding: 10px 0;\n  background-color: #85d417;\n  color: #fff;\n  text-align: center;\n}\n.sidebar__item-block[data-v-051af398] {\n  overflow-y: scroll;\n}\n.sidebar__item[data-v-051af398] {\n  padding: 15px 20px;\n  border-bottom: 1px solid #eee;\n}\n.sidebar__item[data-v-051af398]:hover,\n.sidebar__item.select[data-v-051af398] {\n  background-color: #85d417;\n  color: #fff;\n}\n.sidebar__item .working[data-v-051af398] {\n  float: right;\n  background-color: #85d432;\n  padding: 3px 6px;\n  border-radius: 3px;\n  color: #fff;\n}\n.border[data-v-051af398] {\n  width: 90%;\n  height: 2px;\n  margin: 40px auto;\n  background-color: rgba(0,0,0,0.2);\n}\n.group-name[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 32px;\n}\n.date[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 20px;\n}\n.time[data-v-051af398] {\n  margin: 0 0 0 40px;\n  font-size: 64px;\n}\n.btn__block[data-v-051af398] {\n  width: 360px;\n  margin: 50px auto 0;\n}\n.name[data-v-051af398] {\n  margin: 0 0 10px;\n  font-size: 30px;\n  text-align: center;\n}\n.btn[data-v-051af398] {\n  width: 120px;\n  height: 120px;\n  margin: 0 60px 0 0;\n  padding: 0;\n  border-radius: 60px;\n  border: 2px solid #fff;\n  font-size: 18px;\n  line-height: 120px;\n  opacity: 0.5;\n}\n.btn[data-v-051af398]:hover {\n  color: #fff;\n  opacity: 0.5;\n}\n.btn.active[data-v-051af398] {\n  -webkit-box-shadow: 0 0 0 0 #000;\n          box-shadow: 0 0 0 0 #000;\n  opacity: 1;\n}\n.btn.active[data-v-051af398]:hover {\n  background-color: #fff;\n  color: #85d417;\n}\n", ""]);
 
 // exports
 
@@ -43274,8 +43274,7 @@ module.exports = function normalizeComponent (
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -43299,7 +43298,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
+// import axios from 'axios'
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['team'],
   data: function data() {
@@ -43401,20 +43400,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       for (var i = 0; i < this.members.length; i++) {
         if (this.members[i].name === this.selectedMember) {
-          __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/time', {
+          window.axios.post('/time', {
             id: i + 1,
             start_time: this.getTime()
           }).then(function (res) {
-            console.log(res.data);
-            _this.members[i].is_working = true;
+            _this.members[res.data - 1].is_working = true;
           });
         }
       }
     },
     leave: function leave() {
+      var _this2 = this;
+
       for (var i = 0; i < this.members.length; i++) {
         if (this.members[i].name === this.selectedMember) {
-          this.members[i].is_working = false;
+          window.axios.put('/time/' + (i + 1), {
+            end_time: this.getTime()
+          }).then(function (res) {
+            _this2.members[res.data - 1].is_working = false;
+          });
         }
       }
     },
@@ -43427,26 +43431,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var minutes = this.zeroPadding(time.getMinutes());
       var seconds = this.zeroPadding(time.getSeconds());
 
-      return year + '/' + month + '/' + date + ' ' + hour + ':' + minutes + ':' + seconds;
+      return year + '-' + month + '-' + date + ' ' + hour + ':' + minutes + ':' + seconds;
     },
     isSelect: function isSelect(name) {
       return this.selectedMember === name ? true : false;
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this3 = this;
 
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/user').then(function (res) {
+    axios.get('/user').then(function (res) {
       console.log(res.data);
-      _this2.members = res.data;
+      _this3.members = res.data;
     });
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     setInterval(function () {
-      _this3.nowDate = _this3.date();
-      _this3.nowTime = _this3.time();
+      _this4.nowDate = _this4.date();
+      _this4.nowTime = _this4.time();
     }, 100);
   }
 });
@@ -43498,11 +43502,11 @@ var render = function() {
         )
       ])
     ]),
-    _c(
-      "div",
-      { staticClass: "sidebar" },
-      [
-        _c("div", { staticClass: "sidebar__title" }, [_vm._v("スタッフ一覧")]),
+    _c("div", { staticClass: "sidebar" }, [
+      _c("div", { staticClass: "sidebar__title" }, [_vm._v("スタッフ一覧")]),
+      _c(
+        "div",
+        { staticClass: "sidebar__item-block" },
         _vm._l(_vm.members, function(member) {
           return _c(
             "div",
@@ -43523,9 +43527,8 @@ var render = function() {
             ]
           )
         })
-      ],
-      2
-    )
+      )
+    ])
   ])
 }
 var staticRenderFns = []

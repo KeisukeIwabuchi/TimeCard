@@ -15,25 +15,21 @@ class WorkingTimeController extends Controller
 
     public function store(Request $request)
     {
-        $user_id = $request->input('id');
-        $start = $request->input('start_time');
-
         $result = DB::table('working_times')->insert([
-            'user_id' => $user_id,
-            'year' => 2017,
-            'month' => 12,
-            'date' => 19,
-            'start_time' => $start
+            'user_id'    => $request->input('id'),
+            'start_time' => $request->input('start_time')
         ]);
 
-        return $result;
+        return $request->input('id');
     }
 
     public function update(Request $request, $id)
     {
-        $end = $request->input('end_time');
-        DB::table('working_times')->where('id', $id)->update([
-            'end_time' => $end
-        ]);
+        DB::table('working_times')
+        ->where('user_id', $id)
+        ->whereNull('end_time')
+        ->update(['end_time' => $request->input('end_time')]);
+
+        return $id;
     }
 }
