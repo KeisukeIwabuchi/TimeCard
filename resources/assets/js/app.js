@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('time-card', require('./components/TimeCard.vue'));
+Vue.component('admin', require('./components/Admin.vue'));
 
 const app = new Vue({
     el: '#app'
